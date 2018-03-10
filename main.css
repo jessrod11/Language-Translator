@@ -1,8 +1,9 @@
 body {
-    background-color: blue;
+    /* background-color: blue; */
 }
 
-.title-header{
+h1 {
     text-align: center;
     padding: 15px;
 }
+
