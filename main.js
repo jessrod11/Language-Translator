@@ -1,6 +1,6 @@
 console.log('Stix');
 
-// Spanish variable (Array of Objects)
+
   var spanish = [
       {
         "merry": "alegre",
@@ -20,7 +20,6 @@ console.log('Stix');
 
   ];
 
-  // German variable  (Array of Objects)
   var german = [
       {
           "merry": "fröhlich",
@@ -40,22 +39,22 @@ console.log('Stix');
 
   ];
 
-  // Italian variable (Array of Objects)
+
   var italian = [
       {
-        "merry": "feliz",
-        "christmas":  "navidad",
-        "happy": "",
-        "new": "",
-        "year": "",
-        "have": "",
-        "a": "",
-        "and": "",
-        "xmas": "",
-        "holiday": "",
-        "we": "",
-        "wish": "",
-        "you": ""
+        "merry": "buon",
+        "christmas":  "natale",
+        "happy": "contento",
+        "new": "nuovo",
+        "year": "anno",
+        "have": "avere",
+        "a": "un",
+        "and": "e",
+        "xmas": "xmas",
+        "holiday": "vacanza",
+        "we": "noi",
+        "wish": "desiderio",
+        "you": "tu"
       },
 
   ];
