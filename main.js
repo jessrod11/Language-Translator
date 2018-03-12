@@ -56,14 +56,24 @@ var spanish = [
 
   ];
 
- var outputDiv = document.getElementById('output-container');
+var outputDiv = document.getElementById('output-container');
+var textBox = document.getElementById('text-box');
+var spanishBtn = document.getElementById('spanish-btn');
+var italianBtn = document.getElementById('italian-btn');
+var germanBtn = document.getElementById('german-btn');
+
 
   function langTranslator(languageArray) {
       for(var i=0; i< languageArray.length; i++){
-          //console.log("test", languageArray[i]);
+         console.log("language Array", languageArray[i]);
       }
-  }
+  };
+
+      spanishBtn.addEventListener('click', function (event) {
+        console.log("click test", event);
+      });
+  
 
   langTranslator(spanish);
-  langTranslator(german);
-  langTranslator(italian);
+//   langTranslator(german);
+//   langTranslator(italian);
