@@ -1,7 +1,4 @@
-console.log('Stix');
-
-
-  var spanish = [
+var spanish = [
       {
         "merry": "alegre",
         "christmas":  "navidad",
@@ -59,7 +56,14 @@ console.log('Stix');
 
   ];
 
+ var outputDiv = document.getElementById('output-container');
 
+  function langTranslator(languageArray) {
+      for(var i=0; i< languageArray.length; i++){
+          //console.log("test", languageArray[i]);
+      }
+  }
 
-// Fill all objects with limted dictionary.
-// Limited Dictionary should include: Merry, Christmas, Happy, New, Year, Have, A, And, Xmas, Holiday, We, Wish, You
+  langTranslator(spanish);
+  langTranslator(german);
+  langTranslator(italian);
