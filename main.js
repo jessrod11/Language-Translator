@@ -1,6 +1,6 @@
-var spanish = [
+var spanish = 
       {
-        "merry": "alegre",
+      "merry" : "alegre",
         "christmas":  "navidad",
         "happy": "feliz",
         "new": "nuevo",
@@ -12,16 +12,15 @@ var spanish = [
         "holiday": "fiesta",
         "we": "nosotros",
         "wish": "deseo",
-          "you": "tú"
+        "you": "tú"
       },
 
-  ];
 
-  var german = [
+  var german = 
       {
-          "merry": "fröhlich",
+        "merry": "fröhlich",
         "christmas":  "navidad",
-          "happy": "weihnachten",
+        "happy": "weihnachten",
         "new": "neu",
         "year": "jahr",
         "have": "haben",
@@ -34,10 +33,9 @@ var spanish = [
         "you": "sie"
       },
 
-  ];
 
 
-  var italian = [
+  var italian = 
       {
         "merry": "buon",
         "christmas":  "natale",
@@ -52,28 +50,28 @@ var spanish = [
         "we": "noi",
         "wish": "desiderio",
         "you": "tu"
-      },
+      };
 
-  ];
-
-var outputDiv = document.getElementById('output-container');
-var textBox = document.getElementById('text-box');
-var spanishBtn = document.getElementById('spanish-btn');
-var italianBtn = document.getElementById('italian-btn');
-var germanBtn = document.getElementById('german-btn');
+  console.log(spanish);
 
 
-  function langTranslator(languageArray) {
-      for(var i=0; i< languageArray.length; i++){
-         console.log("language Array", languageArray[i]);
+const outputDiv = document.getElementById('output-container');
+const getText = document.getElementById('text-box');
+// const spanishBtn = document.getElementById('spanish-btn');
+// const italianBtn = document.getElementById('italian-btn');
+// const germanBtn = document.getElementById('german-btn');
+
+
+const allTheButtons = document.getElementsByClassName('translate');
+for (let i=0; i< allTheButtons.length; i++){
+  allTheButtons[i].addEventListener('click', (e) =>{
+    const userInput = getText.value.toLowerCase();
+      let domOutput = '';
+      if (e.target.id === 'spanish-btn'){
+        domOutput = spanish[userInput];
       }
-  };
+      outputDiv.innerHTML = domOutput;
+  });
+};
 
-      spanishBtn.addEventListener('click', function (event) {
-        console.log("click test", event);
-      });
-  
 
-  langTranslator(spanish);
-//   langTranslator(german);
-//   langTranslator(italian);
