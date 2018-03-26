@@ -67,15 +67,18 @@ for (let i=0; i< allTheButtons.length; i++){
       const italianObj = italian[0];
       if (event.target.id === 'spanish-btn'){
         splitArray.forEach((translatePhrase) => {
-          domOutput.push(spanishObj[translatePhrase]);
+          const translateSpanish = spanishObj[translatePhrase];
+          domOutput.push(translateSpanish);
         });
       } else if (event.target.id === 'german-btn'){
         splitArray.forEach((translatePhrase) => {
-          domOutput.push(germanObj[translatePhrase]);
+          const translateGerman = germanObj[translatePhrase];
+          domOutput.push(translateGerman);
         });
       } else {
         splitArray.forEach((translatePhrase) => {
-          domOutput.push(italianObj[translatePhrase]);
+          const translateItalian = italianObj[translatePhrase];
+          domOutput.push(translateItalian);
         });
       }
       outputDiv.innerHTML = domOutput.join(' ');
