@@ -1,18 +1,18 @@
 const spanish = [
       {
-        "merry": "alegre",
-        "christmas":  "navidad",
-        "happy": "feliz",
-        "new": "nuevo",
-        "year": "ano",
-        "have": "tener",
-        "a": "un",
-        "and": "y",
-        "xmas": "xmas",
-        "holiday": "fiesta",
-        "we": "nosotros",
-        "wish": "deseo",
-        "you": "tú"
+        merry: "alegre",
+        christmas:  "navidad",
+        happy: "feliz",
+        new: "nuevo",
+        year: "ano",
+        have: "tener",
+        a: "un",
+        and: "y",
+        xmas: "xmas",
+        holiday: "fiesta",
+        we: "nosotros",
+        wish: "deseo",
+        you: "tú"
       }
     ];
 
@@ -56,12 +56,14 @@ const outputDiv = document.getElementById('output-container');
 const getText = document.getElementById('text-box');
 
 const allTheButtons = document.getElementsByClassName('translate');
+
+const buttonEvents = () => {
 for (let i=0; i< allTheButtons.length; i++){
   allTheButtons[i].addEventListener('click', (event) =>{
     const userInput = getText.value;
       let domOutput = '';
       const spanishObj = spanish[0];
-      const germanObj = german[0];
+      const germanObj  =  german[0];
       const italianObj = italian[0];
       if (event.target.id === 'spanish-btn'){
         domOutput = spanishObj[userInput];
@@ -71,7 +73,11 @@ for (let i=0; i< allTheButtons.length; i++){
         domOutput = italianObj[userInput];
       }
       outputDiv.innerHTML = domOutput;
-  });
+    });
+  };
 };
+
+buttonEvents();
+
 
 
