@@ -1,18 +1,18 @@
 const spanish = [
       {
-        "merry": "alegre",
-        "christmas":  "navidad",
-        "happy": "feliz",
-        "new": "nuevo",
-        "year": "ano",
-        "have": "tener",
-        "a": "un",
-        "and": "y",
-        "xmas": "xmas",
-        "holiday": "fiesta",
-        "we": "nosotros",
-        "wish": "deseo",
-        "you": "tú"
+        merry: "alegre",
+        christmas:  "navidad",
+        happy: "feliz",
+        new: "nuevo",
+        year: "ano",
+        have: "tener",
+        a: "un",
+        and: "y",
+        xmas: "xmas",
+        holiday: "fiesta",
+        we: "nosotros",
+        wish: "deseo",
+        you: "tú"
       }
     ];
 
@@ -55,23 +55,39 @@ const spanish = [
 const outputDiv = document.getElementById('output-container');
 const getText = document.getElementById('text-box');
 
-const allTheButtons = document.getElementsByClassName('translate');
+
+const translateButton = () => {
+  const allTheButtons = document.getElementsByClassName('translate');
 for (let i=0; i< allTheButtons.length; i++){
   allTheButtons[i].addEventListener('click', (event) =>{
-    const userInput = getText.value;
-      let domOutput = '';
+    const userInput = getText.value.toLowerCase();
+    const splitArray = userInput.split(' ');
+      let domOutput = [];
       const spanishObj = spanish[0];
-      const germanObj = german[0];
+      const germanObj  =  german[0];
       const italianObj = italian[0];
       if (event.target.id === 'spanish-btn'){
-        domOutput = spanishObj[userInput];
+        splitArray.forEach((translatePhrase) => {
+          const translateSpanish = spanishObj[translatePhrase];
+          domOutput.push(translateSpanish);
+        });
       } else if (event.target.id === 'german-btn'){
-        domOutput = germanObj[userInput];
+        splitArray.forEach((translatePhrase) => {
+          const translateGerman = germanObj[translatePhrase];
+          domOutput.push(translateGerman);
+        });
       } else {
-        domOutput = italianObj[userInput];
+        splitArray.forEach((translatePhrase) => {
+          const translateItalian = italianObj[translatePhrase];
+          domOutput.push(translateItalian);
+        });
       }
-      outputDiv.innerHTML = domOutput;
-  });
+      outputDiv.innerHTML = domOutput.join(' ');
+    });
+  };
 };
+
+translateButton();
+
 
 
