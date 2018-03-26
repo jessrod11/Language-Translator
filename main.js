@@ -54,9 +54,10 @@ const spanish = [
 
 const outputDiv = document.getElementById('output-container');
 const getText = document.getElementById('text-box');
-const allTheButtons = document.getElementsByClassName('translate');
+
 
 const translateButton = () => {
+  const allTheButtons = document.getElementsByClassName('translate');
 for (let i=0; i< allTheButtons.length; i++){
   allTheButtons[i].addEventListener('click', (event) =>{
     const userInput = getText.value.toLowerCase();
