@@ -54,30 +54,36 @@ const spanish = [
 
 const outputDiv = document.getElementById('output-container');
 const getText = document.getElementById('text-box');
-
 const allTheButtons = document.getElementsByClassName('translate');
 
-const buttonEvents = () => {
+const translateButton = () => {
 for (let i=0; i< allTheButtons.length; i++){
   allTheButtons[i].addEventListener('click', (event) =>{
-    const userInput = getText.value;
-      let domOutput = '';
+    const userInput = getText.value.toLowerCase();
+    const splitArray = userInput.split(' ');
+      let domOutput = [];
       const spanishObj = spanish[0];
       const germanObj  =  german[0];
       const italianObj = italian[0];
       if (event.target.id === 'spanish-btn'){
-        domOutput = spanishObj[userInput];
+        splitArray.forEach((translatePhrase) => {
+          domOutput.push(spanishObj[translatePhrase]);
+        });
       } else if (event.target.id === 'german-btn'){
-        domOutput = germanObj[userInput];
+        splitArray.forEach((translatePhrase) => {
+          domOutput.push(germanObj[translatePhrase]);
+        });
       } else {
-        domOutput = italianObj[userInput];
+        splitArray.forEach((translatePhrase) => {
+          domOutput.push(italianObj[translatePhrase]);
+        });
       }
-      outputDiv.innerHTML = domOutput;
+      outputDiv.innerHTML = domOutput.join(' ');
     });
   };
 };
 
-buttonEvents();
+translateButton();
 
 
 
